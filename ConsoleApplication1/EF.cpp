@@ -20,7 +20,6 @@ EF::EF()
 	AddCoupling(trans, 0, gen, Generator::_InPort::STOP); //IC
 
 	SetPriority(2, trans, gen);
-	
 }
 
 EF::~EF()
