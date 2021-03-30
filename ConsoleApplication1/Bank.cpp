@@ -8,9 +8,9 @@ BANK::BANK()
 	SetName("BANK");
 
 	UDEModel *q = new Queue();
-	UDEModel **t = new UDEModel*[UDEDB.GetInt("Queue", "InitialTeller")];
+	UDEModel **t = new UDEModel*[UDEDB.GetInt("Queue", "InitialTeller")]; // 동적으로 포인터 배열을 할당할때 이중 포인터가 흔히 쓰임. int** array = new int*[10]; 
 	for (int l1 = 0; l1 < UDEDB.GetInt("Queue", "InitialTeller"); l1++) {
-		t[l1] = new Teller(l1 + 1);
+		t[l1] = new Teller(l1 + 1); // 결국 auto t = new Teller[UDEDB.Get...][l1+1], 여러명의 teller를 생성하기 위한 코드
 	}
 
 	AddInPort(0); AddOutPort(0);
