@@ -2,7 +2,7 @@
 
 Teller::Teller()
 {
-	SetName("Teller1");
+	SetName("Teller1"); // test
 
 	AddInPort(0);
 	AddOutPort(_OutPort::DONE);
